@@ -13,7 +13,9 @@ import lombok.Data;
 @Table(name = "tb_movie")
 public class Movie {
 
-	
+	public Movie() {
+		
+	}
      	
 	public Movie(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
