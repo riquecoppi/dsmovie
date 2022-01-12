@@ -13,6 +13,9 @@ import lombok.Data;
 @Table(name = "tb_user")
 public class User {
 
+	public User() {
+		
+	}
 	
 	
 	public User(Long id, String email) {

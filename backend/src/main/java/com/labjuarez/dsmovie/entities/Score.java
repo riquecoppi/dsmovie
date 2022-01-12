@@ -1,6 +1,6 @@
 package com.labjuarez.dsmovie.entities;
 
-import javax.persistence.Embedded;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -25,7 +25,7 @@ public class Score {
 		id.setMovie(movie);
 	}
 	
-	public void serUser(User user) {
+	public void setUser(User user) {
 		id.setUser(user);
 	}
 	
