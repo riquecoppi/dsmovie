@@ -10,25 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name = "tb_movie")
 public class Movie {
 
-	public Movie() {
-		
-	}
-     	
-	public Movie(Long id, String title, Double score, Integer count, String image) {
-		this.id = id;
-		this.title = title;
-		this.score = score;
-		this.count = count;
-		this.image = image;
-	}
-
+	
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,7 +38,76 @@ public class Movie {
     
     private String image;
     
-    @OneToMany(mappedBy = "id.movie")
+    
+    public Movie() {
+		
+	}
+     	
+	public Movie(Long id, String title, Double score, Integer count, String image) {
+		this.id = id;
+		this.title = title;
+		this.score = score;
+		this.count = count;
+		this.image = image;
+	}
+
+	
+	
+	
+    
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
+	}
+
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Set<Score> getScores() {
+		return scores;
+	}
+
+	public void setScores(Set<Score> scores) {
+		this.scores = scores;
+	}
+
+
+
+
+
+	@OneToMany(mappedBy = "id.movie")
     private Set<Score> scores = new HashSet<>();
 
 }

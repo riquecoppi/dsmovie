@@ -6,22 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
 
-@Data
+
+
 @Entity
 @Table(name = "tb_user")
 public class User {
 
-	public User() {
-		
-	}
-	
-	
-	public User(Long id, String email) {
-		this.id = id;
-		this.email = email;
-	}
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +21,40 @@ public class User {
 	
 	
 	private String email;
+	
+	
+	public User () {
+		
+	}
+
+
+	public User(Long id, String email) {
+		super();
+		this.id = id;
+		this.email = email;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 	
 	
 	

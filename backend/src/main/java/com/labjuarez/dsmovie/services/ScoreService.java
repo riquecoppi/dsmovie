@@ -39,7 +39,7 @@ public class ScoreService {
         	user = new User();
         	user.setEmail(dto.getEmail());
         	user = userRepository.saveAndFlush(user);
-        }
+        }//se o usuario nao existe,cadastrar no banco.
         
         
         Movie movie = movieRepository.findById(dto.getMovieId()).get();
